@@ -5,11 +5,11 @@ from typing import List
 
 # class Solution:
 #     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-#         b= list(nums)
-#         n= len(b)
+#         # b= list(nums)
+#         # n= len(b)
 #         re=[]
-#         for i in range(1,n+1):
-#             if i not in b:
+#         for i in range(1,len(nums)+1):
+#             if i not in nums:
 #                 re.append(i)
 #         return re
 
