@@ -4,7 +4,8 @@ from typing import List
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
         result = [x for x in nums if x >= k or abs(x) >= k]
-        result = sum(result)/len(result)
+        result = sum(result)
+        result = result/k
         print(result)
         
 a=Solution
