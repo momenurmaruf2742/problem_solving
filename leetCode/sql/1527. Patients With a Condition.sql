@@ -1,4 +1,4 @@
-select patient_id, patient_name, conditions from Patients where conditions like "%DIAB1%"
+select patient_id, patient_name, conditions from Patients where conditions regexp '\\bDIAB1'
 
 
 -- Create table If Not Exists Patients (patient_id int, patient_name varchar(30), conditions varchar(100))
