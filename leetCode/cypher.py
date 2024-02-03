@@ -30,9 +30,32 @@ def transposition_cipher(plaintext, key):
     ]
 
     # Read the rows to get the ciphered text
-    cyphertext = ' '.join([''.join(row) for row in arranged_matrix])
+    cyphertext = ''.join([''.join(row) for row in arranged_matrix])
 
     return cyphertext
+def reverse_transposition_cipher(cyphertext, key):
+    cyphertext=cyphertext.replace(" ", "")
+    key_str = str(key)
+
+    # Create a matrix based on the given key
+    matrix = [list(cyphertext[i:i + len(key_str)]) for i in range(0, len(cyphertext), len(key_str))]
+
+    # Create a mapping to sort the columns based on the key
+    column_mapping = {int(k): i for i, k in enumerate(key_str)}
+
+    # Arrange columns based on the sorted key
+    arranged_matrix = [[''] * len(key_str) for _ in range(len(matrix))]
+
+    for row in range(len(matrix)):
+        for col, original_col in sorted(column_mapping.items()):
+            if col < len(matrix[row]):
+                arranged_matrix[row][original_col] = matrix[row][col]
+
+    # Read the rows to get the original plaintext
+    plaintext = ''.join([''.join(row) for row in arranged_matrix])
+
+    return plaintext
+
 
 # Example usage
 plaintext = "THE SIMPLEST POSSIBLE TRANSPOSITIONS"
@@ -40,6 +63,11 @@ key = 41532
 
 # Encrypt (Transposition Cipher)
 cyphertext = transposition_cipher(plaintext.replace(" ", ""), key)
+
+# Example usage
+decrypted_text = reverse_transposition_cipher(cyphertext, key)
+print(f"Decrypted Text: {decrypted_text}")
+
 print("Key:", key)
 print(f"Cypher Text: {cyphertext}")
 
