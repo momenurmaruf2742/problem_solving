@@ -1,9 +1,7 @@
 
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s=s.split()
-        
-        return s
+        return (" ".join(s.split()[::-1]))
 
 c = Solution
-print(c.reverseWords(None,"new"))
+print(c.reverseWords(None," new g"))
