@@ -3,6 +3,18 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+<<<<<<< HEAD
+        for i in List:
+
+
+        pass
+
+        return
+
+
+c = Solution
+print(c.productExceptSelf(None,[145,665,66]))
+=======
         n = len(nums)
         left = [1] * n
         right = [1] * n
@@ -22,3 +34,4 @@ c = Solution()
 print(c.productExceptSelf([-1,1,0,-3,3]))
 
 
+>>>>>>> 9a3d17bb881f3290dfe42ef7b60ebceff1fd2bae
