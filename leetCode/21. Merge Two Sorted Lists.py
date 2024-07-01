@@ -8,8 +8,10 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNoteBook], list2: Optional[ListNode]) -> Optional[ListNode]:
-        list3=sorted(list1+list2)
-        return list3
+        list3=sorted(list1)
+        list4=sorted(list2)
+        return list3.extend(list4)
+
 
 a=Solution
-a.mergeTwoLists(None,[1,2,4],[1,3,4])
+print(a.mergeTwoLists(None,[1,2,4],[1,3,4]))
