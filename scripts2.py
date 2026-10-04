@@ -37,9 +37,20 @@
 #     print("{0} is not a leap year".format(year))
 
 
-number = int(input())
-str_num = str(number)
-if str_num == str_num[::-1]:
-    print(f"{number} is a palindrome number")
-else:
-    print(f"{number} is not a palindrome number")
+# number = int(input())
+# str_num = str(number)
+# if str_num == str_num[::-1]:
+#     print(f"{number} is a palindrome number")
+# else:
+#     print(f"{number} is not a palindrome number")
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def permutation(n, r):
+    return factorial(n) // factorial(n-r)
+
+print(permutation(4, 2))
