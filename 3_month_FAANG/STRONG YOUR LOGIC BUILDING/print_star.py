@@ -72,3 +72,30 @@ print("another version")
 n = 5
 for i in range(n):
     print(" " * (n-i-1) + "*" * (2*i+1))
+
+
+# 10. Print Stars and Spaces Alternating (Stars and Blank Spaces)
+print("10. Print Stars and Spaces Alternating (Stars and Blank Spaces)")
+n = 5
+
+for i in range(n):
+    # Print leading characters
+    for j in range(n - i - 1):
+        print("B", end="")
+
+    # Print alternating stars and spaces
+    for j in range(2 * i + 1):
+        if j % 2 == 0:
+            print("*", end="")
+        else:
+            print("B", end="")
+
+    print()
+
+# 11. Print Numbers in an Increasing Sequence (1, 12, 123, 1234, 12345)
+print("11. Print Numbers in an Increasing Sequence (1, 12, 123, 1234, 12345)")
+n = 5
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j, end="")
+    print()
